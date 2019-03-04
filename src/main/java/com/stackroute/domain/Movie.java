@@ -10,4 +10,11 @@ public class Movie {
     public void setActor(Actor actor) {
         this.actor = actor;
     }
+
+    public Movie() {
+    }
+
+    public Movie(Actor actor) {
+        this.actor = actor;
+    }
 }

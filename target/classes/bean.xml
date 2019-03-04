@@ -23,5 +23,11 @@
             <ref bean="actor1"></ref>
         </property>
     </bean>
+    <bean id="actor2" class="com.stackroute.domain.Actor" scope="prototype">
+        <constructor-arg value="vijay"/>
+        <constructor-arg value="male"/>
+        <constructor-arg value="30"/>
+    </bean>
+    <bean id="bean2" autowire="constructor" class="com.stackroute.domain.Movie" scope="prototype"></bean>
 
 </beans>
