@@ -11,9 +11,6 @@ public class MoviesMain {
 
         ApplicationContext context=new ClassPathXmlApplicationContext("bean.xml");
         BeanLifecycleDemoBean beanLifecycleDemoBean = (BeanLifecycleDemoBean)context.getBean("BeanLifecycle");
-        beanLifecycleDemoBean.display();
-        beanLifecycleDemoBean.customInit();
-        beanLifecycleDemoBean.customDestroy();
     }
 
 }
