@@ -3,5 +3,19 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 
-    <bean id="BeanLifecycle" class="com.stackroute.demo.BeanLifecycleDemoBean" init-method="customInit" destroy-method="customDestroy"></bean>
+    <!-- Task-3 beans for setter injection using autoware to byName -->
+    <bean id="actor" class="com.stackroute.domain.Actor" scope="prototype">
+        <property name="name" value="vijay"></property>
+        <property name="gender" value="male"></property>
+        <property name="age" value="30"></property>
+    </bean>
+    <bean id="bean-1" autowire="byName" class="com.stackroute.domain.Movie" scope="singleton"></bean>
+    <!-- *If we set autoware to byType it wont work for 2 different beans of same type works only for one bean of one type
+         * Task-3 beans for constructor injection using autoware to constructor-->
+    <bean id="actor2" class="com.stackroute.domain.Actor" scope="prototype">
+        <constructor-arg value="vijay"/>
+        <constructor-arg value="male"/>
+        <constructor-arg value="30"/>
+    </bean>
+    <bean id="bean-2" autowire="constructor" class="com.stackroute.domain.Movie" scope="prototype"></bean>
 </beans>
